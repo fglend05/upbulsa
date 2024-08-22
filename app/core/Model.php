@@ -78,7 +78,7 @@ trait Model
                     unset($data[$key]);
                 }
             }
-        }
+        }   
 
         $keys = array_keys($data);
         $query = "INSERT INTO $this->table (" . implode(",", $keys) . ") VALUES (:" . implode(",:", $keys) . ") ";
@@ -86,8 +86,8 @@ trait Model
         $this->query($query, $data);
         return false;
 
-    // Return the last inserted ID
-    return $this->db->lastInsertId();
+        // Return the last inserted ID
+        return $this->db->lastInsertId();
     }
     public function update($id, $id_column = 'id', $data)
     {

@@ -4,7 +4,7 @@ class User
 {
     use Model;
 
-    protected $table = 'users'; // Assuming your user table is named 'users'
+    protected $table = 'user'; // Assuming your user table is named 'users'
 
     /**
      * Verify the user credentials.

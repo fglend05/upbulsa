@@ -15,8 +15,16 @@ class CartItems
      */
     public function addItem($cartId, $itemData)
     {
-        // Add an item to the cart
+        // Ensure user_id is set
+        if (!isset($itemData['user_id'])) {
+            error_log("user_id is missing in item data: " . print_r($itemData, true));
+            return false; // Or handle this case as needed
+        }
+
+        // Add the cart_id to the item data
         $itemData['cart_id'] = $cartId;
+
+        // Insert the item into the database
         return $this->insert($itemData);
     }
 

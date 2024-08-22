@@ -1,5 +1,7 @@
 <?php
 
+// namespace App\Contollers;
+
 class AuthController
 {
     public function login()
